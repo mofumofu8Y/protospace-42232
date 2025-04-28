@@ -1,0 +1,19 @@
+<div class="main">
+  <div class="inner">
+    <div class="form__wrapper">
+      <h2 class="page-heading">新規プロトタイプ投稿</h2>
+        <%# 部分テンプレートでフォームを表示する %>
+        <%= render "form" %>
+        <% if @prototype.errors.any? %>
+  <div class="error_messages">
+    <h2><%= pluralize(@prototype.errors.count, "error") %> prohibited this prototype from being saved:</h2>
+    <ul>
+      <% @prototype.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+    </div>
+  </div>
+</div>
